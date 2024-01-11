@@ -1,0 +1,17 @@
+{
+  "name": "vue-cli-plugin-update-listener",
+  "version": "1.0.11",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "vue-cli",
+    "vue-cli-plugin-update-listener",
+    "update-listener"
+  ],
+  "author": "miraquai",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {}
+}
