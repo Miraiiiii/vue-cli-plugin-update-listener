@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-12 11:28:47
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-12 13:53:27
+ * @LastEditTime: 2024-01-12 14:36:26
 -->
 # vue-cli-plugin-update-listener
 
@@ -14,7 +14,16 @@
 ```
 
 ```js
-2. vue.config.js中的UpdateListenerPlugin进行配置
+2. "vue.config.js"中进行配置：
+    module.exports = {
+      //...
+      pluginOptions: {
+        UpdateListenerPlugin: { // 是否开启版本监听信息写入
+          show: process.env.NODE_ENV !== "development"
+        }
+      }
+      // ...
+    }
 ```
 
 ```js
