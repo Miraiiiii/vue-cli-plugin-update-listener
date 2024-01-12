@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-11 15:39:38
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-11 18:17:41
+ * @LastEditTime: 2024-01-12 11:22:44
  */
 const { existsSync, writeFileSync } = require('fs')
 const util = require('util')
@@ -13,7 +13,7 @@ class UpdateListenerPlugin {
   constructor() {
     this.gitInfo = {
       commitHash: '',
-      isTip
+      isTip: true
     }
   }
 
@@ -37,7 +37,7 @@ class UpdateListenerPlugin {
       this.getChildProcess('git rev-parse HEAD'),
       this.getChildProcess('git show -s --format=%cd'),
       this.getChildProcess('git show -s --format=%cn'),
-      this.getChildProcess('git show -s --format=%s')
+      this.getChildProcess('git log --no-merges --grep="^Revert" --invert-grep -1 --pretty=format:"%s"')
     ]).then(([branchName, commitHash, date, name, message]) => {
       const reg = /--no-tip/
       const info = {
